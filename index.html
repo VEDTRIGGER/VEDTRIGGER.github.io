@@ -83,7 +83,8 @@
       h1.textContent = `Vote for ${skill}`;
     });
 
-    function closeTelegramWebApp() {
+    function closeTelegramWebApp(event) {
+      event.preventDefault();
       Telegram.WebApp.close();
     }
   </script>
@@ -93,7 +94,7 @@
     <div class="info">
       <h1>Vote for {{skill}}</h1>
     </div>
-    <form onsubmit="closeTelegramWebApp()">
+    <form onsubmit="closeTelegramWebApp(event)">
       <input type="text" value="EQAbaHewjTM-iA9T2OZoDp6NJo7f3S5sWkzWzmjJWE3DONE0" />
       <span style="color:white; margin-left:5px;font-size:20px;font-weight: bold;">Wallet</span>
       <input type="text" pattern="\d*" placeholder="Enter TON amount" />
