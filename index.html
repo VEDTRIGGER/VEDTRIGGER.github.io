@@ -72,6 +72,7 @@
       }
     </style>
   <script>
+    async src="https://telegram.org/js/api/td_webapp.js";
     window.addEventListener("load", () => {
       const urlParams = new URLSearchParams(window.location.search);
       const skill = urlParams.get("skill");
@@ -81,9 +82,10 @@
       const h2 = document.querySelector(".info h2");
 
       h1.textContent = `Vote for ${skill}`;
+     
     });
 
-    function closeTelegramWebApp(event) {
+    function closeTelegramWebApp() {
       event.preventDefault();
       Telegram.WebApp.close();
     }
@@ -94,7 +96,7 @@
     <div class="info">
       <h1>Vote for {{skill}}</h1>
     </div>
-    <form onsubmit="closeTelegramWebApp(event)">
+    <form onsubmit="closeTelegramWebApp()">
       <input type="text" value="EQAbaHewjTM-iA9T2OZoDp6NJo7f3S5sWkzWzmjJWE3DONE0" />
       <span style="color:white; margin-left:5px;font-size:20px;font-weight: bold;">Wallet</span>
       <input type="text" pattern="\d*" placeholder="Enter TON amount" />
