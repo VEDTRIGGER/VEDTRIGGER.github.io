@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vote by TON</title>
-      <style>
+  <title>Vote TON</title>
+  <style>
       /* Styles for the container */
       .container {
         display: flex;
@@ -83,7 +83,7 @@
       h1.textContent = `Vote for ${skill}`;
     });
 
-    function showMessage() {
+    function closeTelegramWebApp() {
       Telegram.WebApp.close();
     }
   </script>
@@ -93,7 +93,7 @@
     <div class="info">
       <h1>Vote for {{skill}}</h1>
     </div>
-    <form onsubmit="showMessage()">
+    <form onsubmit="closeTelegramWebApp()">
       <input type="text" value="EQAbaHewjTM-iA9T2OZoDp6NJo7f3S5sWkzWzmjJWE3DONE0" />
       <span style="color:white; margin-left:5px;font-size:20px;font-weight: bold;">Wallet</span>
       <input type="text" pattern="\d*" placeholder="Enter TON amount" />
@@ -102,4 +102,4 @@
     </form>
   </div>
 </body>
-</html> 
+</html>
