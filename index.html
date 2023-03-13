@@ -71,41 +71,32 @@ form button[type="submit"]:hover {
   color: #ff3e3e;
 }
 </style>
-</head>
-<body>
-  <div class="container">
-    <div class="info">
-      <h1>Specify how much you want to improve 
-        <?php
-          if(isset($_GET['skill'])) {
-            echo $_GET['skill'];
-          } else {
-            echo "{{skill}}";
-          }
-        ?> for 
-        <?php
-          if(isset($_GET['name'])) {
-            echo $_GET['name'];
-          } else {
-            echo "{{name}}";
-          }
-        ?>:
-      </h1>
-      <h2>Current 
-        <?php
-          if(isset($_GET['skill'])) {
-            echo $_GET['skill'];
-          } else {
-            echo "{{skill}}";
-          }
-        ?>
-        rating 256 from 1490
-      </h2>
+<script>
+  window.addEventListener("load", () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const skill = urlParams.get("skill");
+    const name = urlParams.get("name");
+
+    const h1 = document.querySelector(".info h1");
+    const h2 = document.querySelector(".info h2");
+
+    h1.textContent = `Specify how much you want to improve ${skill} for ${name}:`;
+    h2.textContent = `Current ${skill} rating 256 from 1490`;
+  });
+</script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="info">
+        <h1>Specify how much you want to improve {{skill}} for {{name}}:</h1>
+        <h2>Current {{skill}} rating 256 from 1490</h2>
+      </div>
+      <form>
+        <input type="text" placeholder="Enter TON amount" />
+        <button type="submit" onclick="window.location.href = 'https://app.tonkeeper.com/transfer/123?amount=123&text'">
+          Vote!
+        </button>
+      </form>
     </div>
-    <form>
-      <input type="text" placeholder="Enter TON amount" />
-      <button type="submit" onclick="window.location.href = 'https://app.tonkeeper.com/transfer/123?amount=123&text'">Vote!</button>  
-    </form>
-  </div>
-</body>
-</html> 
+  </body>
+</html>
