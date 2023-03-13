@@ -80,21 +80,19 @@ form button[type="submit"]:hover {
     const h1 = document.querySelector(".info h1");
     const h2 = document.querySelector(".info h2");
 
-    h1.textContent = `Specify how much you want to improve ${skill} for ${name}:`;
-    h2.textContent = `Current ${skill} rating 256 from 1490`;
+    h1.textContent = `Rate ${skill}`;
   });
 </script>
   </head>
   <body>
     <div class="container">
       <div class="info">
-        <h1>Specify how much you want to improve {{skill}} for {{name}}:</h1>
-        <h2>Current {{skill}} rating 256 from 1490</h2>
+        <h1>Rate {{skill}}</h1>
       </div>
       <form>
-        <input type="text" placeholder="Enter TON amount" />
+        <input type="text" placeholder="Enter TON amount" /><h1> TON</h1>
         <button type="submit" onclick="window.location.href = 'https://app.tonkeeper.com/transfer/123?amount=123&text'">
-          Vote!
+          Confirm
         </button>
       </form>
     </div>
