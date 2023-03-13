@@ -12,7 +12,7 @@
       align-items: center;
       justify-content: center;
       height: 100vh;
-      background-color: #ff3e3e;
+      background-color: #242b3c;
       font-family: "Helvetica Neue", sans-serif;
     }
     
@@ -56,7 +56,7 @@ box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 form button[type="submit"] {
 border: none;
 background-color: #fff;
-color: #ff3e3e;
+color: #242b3c;
 width: 100%;
 padding: 10px 20px;
 border-radius: 30px;
@@ -67,7 +67,7 @@ box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 form button[type="submit"]:hover {
-background-color: #ff3e3e;
+background-color: #63abef;
 color: #fff;
 }
 </style>
@@ -88,12 +88,14 @@ color: #fff;
   <body>
     <div class="container">
       <div class="info">
-        <h1>Vote for {{skill}}</h1>
+        <h1>Rate {{skill}}</h1>
       </div>
       <form onsubmit="showMessage()">
+      <input type="text" value="EQAbaHewjTM-iA9T2OZoDp6NJo7f3S5sWkzWzmjJWE3DONE0" />
+      <span style="color:white; margin-left:5px;font-size:20px;font-weight: bold;">Wallet</span>
         <input type="text" placeholder="Enter TON amount" />
 <span style="color:white; margin-left:5px;font-size:20px;font-weight: bold;">TON</span>
-        <button type="submit" onclick="window.close();">
+        <button type="submit" onclick="self.close()">
           Confirm
         </button>
       </form>
