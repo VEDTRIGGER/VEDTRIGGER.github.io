@@ -1,39 +1,55 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
-    <script src="https://telegram.org/js/telegram-web-app.js?1"></script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TonDemo</title>
-    <style>
-      /* CSS styles for TonKeeper app */
+<head>
+  <script src="https://telegram.org/js/telegram-web-app.js?1"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TonDemo</title>
+  <style>
+    /* CSS styles for TonKeeper app */
 
-      .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        color: #fff;
-        height: 100vh;
-        background-color: #242b3c;
-        font-family: "Helvetica Neue", sans-serif;
-      }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      height: 100vh;
+      background-color: #242b3c;
+      font-family: "Helvetica Neue", sans-serif;
+    }
 
-      label {
-        display: block;
-        margin-bottom: 10px;
-        margin-left:10px;
-        font-weight: bold
-      }
+    label {
+      display: block;
+      margin-bottom: 10px;
+      margin-left: 10px;
+      font-weight: bold
+    }
 
-    </style>
-  </head>
+    /* New styles */
+    .centered-image {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      height: auto;
+      margin-top: 50px;
+    }
+  </style>
+  <script>
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        Telegram.WebApp.close();
+      }, 3000);
+    });
+  </script>
+</head>
 
-  <body>
-    <div class="container">
-      <h1>Thank you for vote!</h1>
-    </div>
-  </body>
+<body>
+  <div class="container">
+    <h1>Thank you for vote!</h1>
+    <img src="https://raw.githubusercontent.com/VEDTRIGGER/VEDTRIGGER.github.io/main/pngwing.com.png" alt="Thank you" class="centered-image">
+  </div>
+</body>
 
 </html>
