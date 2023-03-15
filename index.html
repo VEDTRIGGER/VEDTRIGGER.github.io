@@ -2,117 +2,46 @@
 <html>
 
   <head>
-    <script src="https://telegram.org/js/telegram-web-app.js?1"></script>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     <title>TonDemo</title>
-    <style>
-      /* CSS styles for TonKeeper app */
-
-      .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: top;
-        color: #fff;
-        height: 100vh;
-        background-color: #242b3c;
-        font-family: "Helvetica Neue", sans-serif;
-      }
-
-      label {
-        display: block;
-        margin-bottom: 10px;
-        margin-left:10px;
-        font-weight: bold
-      }
-
-      input[type="text"],
-      select {
-        padding: 10px;
-        border-radius: 20px;
-        border: 1px solid #ccc;
-        width: 90%;
-        margin-bottom: 20px;
-        margin-left:10px;
-      }
-
-      input[type="number"]::-webkit-inner-spin-button,
-      input[type="number"]::-webkit-outer-spin-button {
-        -webkit-appearance: none;
-      }
-
-      input[type="number"] {
-        -moz-appearance: textfield;
-        padding: 10px;
-        border-radius: 20px;
-        border: 1px solid #ccc;
-        width: 50%;
-        margin-bottom: 20px;
-        margin-left:10px;
-      }
-
-      button {
-        padding: 10px 20px;
-        background-color: #63abef;
-        color: #fff;
-        border: none;
-        border-radius: 20px;
-        font-size: 16px;
-        cursor: pointer;
-        width: 90%;
-        margin-left:10px;
-        height:40px;
-      }
-
-      button:hover {
-        background-color: #546285;
-      }
-
-    </style>
-    <script>
-      window.addEventListener("load", () => {
-        const urlParams = new URLSearchParams(window.location.search);
-        const skill = urlParams.get("skill");
-        const name = urlParams.get("name");
-
-        const h1 = document.querySelector("h1");
-        h1.textContent = `Vote for ${skill}`;
-
-      });
-
-      function closeTelegramWebApp() {
-        event.preventDefault();
-        Telegram.WebApp.close();
-      }
-
-      function redirectToThanks() {
-        window.location.href = 'https://vedtrigger.github.io/thanks.html';
-      }
-
-    </script>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <script src="js/index.js"></script>
   </head>
-
   <body>
-    <div class="container">
-      <h1>Vote for ${skill}</h1>
-      <form>
-        <label for="from-wallet">From Wallet:</label>
-        <select style="height:35px;" id="from-wallet" name="from-wallet">
-          <option value="wallet-1">My Wallet</option>
-          <option value="wallet-2">Wallet 2</option>
-          <option value="wallet-3">Wallet 3</option>
-        </select>
-
-        <label for="to-wallet">To Wallet:</label>
-        <input type="text" id="to-wallet" name="to-wallet" value="EQAbaHewjTM-iA9T2OZoDp6NJo7f3S5sWkzWzmjJWE3DONE0">
-
-        <label for="amount">Amount:</label>
-        <input type="number" id="amount" name="amount" placeholder="Enter TON amount" step="0.01" inputmode="numeric">
-        <span style="color:white; margin-left:5px;font-size:18px;font-weight: bold;">Total: 697 TON</span>
-        <button type="button" onclick="redirectToThanks()">Confirm</button>
-      </form>
+    
+    <div class="header">
+        <div class="photo" >
+            <img id="photo" src="" alt="">
+        </div>
+        <div class="text">
+            <div>Vote</div>
+            <div id="name">Alice</div>
+            <div>for</div>
+            <div id="trait">beauty</div>
+        </div>
     </div>
-  </body>
+    <div class="body">
+        <div class="amount">
+            <input type="number" id="amount" name="amount" placeholder="0,01" step="0.01" inputmode="numeric">
+            <div class="ton_text">TON</div>
+        </div>
+        <div class="amountUAH">
+            ≈ <div class="calcUah" id="calcUah"></div> UAH
+        </div>  
+    </div>
+    <div class="footer">
+        <div class="wallet">
+            <div class="label"><img id="label" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9h6g99z9CrV5o6vdt3eiPMpRa5E_6isvjHg&usqp=CAU" alt=""></div>
+            <div class="totalAmount">
+                <div class="textBalance">Total balance</div>
+                <div class="textBalance">687.6</div>
+            </div>
+            <button  class="max-btn" type="button" onclick="setMax()">MAKC.</button>
+        </div>
+        <button id="confirm" type="button" onclick="redirectToThanks()">Confirm</button>
+    </div>
 
+  </body>
 </html>
