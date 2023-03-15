@@ -11,6 +11,8 @@ window.addEventListener("load", () => {
     text_trait.textContent = "beauty";
     const link_img = document.getElementById("photo");
     link_img.src = "https://raw.githubusercontent.com/VEDTRIGGER/Test/main/Julie.png";
+    
+    
     const input = document.querySelector("input");
     const log = document.getElementById("calcUah");
     log.textContent = (0.01*80.6).toFixed(2);
