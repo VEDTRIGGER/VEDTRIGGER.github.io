@@ -3,14 +3,14 @@ window.addEventListener("load", () => {
     const urlParams = new URLSearchParams(window.location.search);
     const skill = urlParams.get("skill");
     const name = urlParams.get("name");
-    const link = urlParams.get("link");
+    const link = decodeURI(urlParams.get("link"));
 
     const text_name = document.getElementById("name");
-    text_name.textContent = "Alice1";
+    text_name.textContent = name;
     const text_trait = document.getElementById("trait");
-    text_trait.textContent = "beauty";
+    text_trait.textContent = skill;
     const link_img = document.getElementById("photo");
-    link_img.src = "https://raw.githubusercontent.com/VEDTRIGGER/Test/main/Julie.png";
+    link_img.src = link;
     
     
     const input = document.querySelector("input");
