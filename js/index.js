@@ -32,7 +32,7 @@ function closeTelegramWebApp() {
 }
 
 function redirectToThanks() {
-    Telegram.WebApp.openTelegramLink("https://vedtrigger.github.io/thanks.html")
+    window.location.href="https://vedtrigger.github.io/thanks.html"
    // window.open("thanks.html","_self")
 }
 function setMax(){
