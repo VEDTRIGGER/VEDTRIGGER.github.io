@@ -214,3 +214,44 @@ color: #919191;
     height: 38px;
 }
 
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: block;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    pointer-events: none;
+    background: var(--moda-bgd-dark);
+    z-index: 5;
+}
+
+.modal-active {
+    pointer-events: all;
+    opacity: 1;
+}
+.body-scroll-disable {
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #63abef;
+    background-color: #fff;
+    height: 100vh;
+    font-family: "Helvetica Neue", sans-serif;
+  }
+
+  /* New styles */
+  .centered-image {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    margin-top: 50px;
+  }

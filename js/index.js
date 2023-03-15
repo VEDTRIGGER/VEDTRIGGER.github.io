@@ -24,6 +24,14 @@ window.addEventListener("load", () => {
         log.textContent = (Number(e.target.value)*80.6).toFixed(2);
         btnText.textContent = `Send ${e.target.value} toncoin`;
     }
+
+   
+   
+            btn.addEventListener('click', (event) => {
+                
+            })
+
+
 });
 
 function closeTelegramWebApp() {
@@ -32,8 +40,16 @@ function closeTelegramWebApp() {
 }
 
 function redirectToThanks() {
-    window.location.href="https://vedtrigger.github.io/thanks.html"
+    //window.location.href="https://vedtrigger.github.io/thanks.html"
    // window.open("thanks.html","_self")
+   const modal = document.getElementById("modal-done");
+   const MODAL_ACTIVE_CLASS = 'modal-active';
+
+   const BODY_SCROLL_DISABLE_CLASS = 'body-scroll-disable';
+   event.preventDefault();
+    modal.classList.add(MODAL_ACTIVE_CLASS);
+    document.body.classList.add(BODY_SCROLL_DISABLE_CLASS);
+
 }
 function setMax(){
     const input = document.querySelector("input");
@@ -43,3 +59,4 @@ function setMax(){
     const btnText = document.getElementById("confirm");
     btnText.textContent = `Send 687.6 toncoin`;
 }
+
