@@ -32,7 +32,7 @@ function closeTelegramWebApp() {
 }
 
 function redirectToThanks() {
-    window.location.href = 'thanks.html';
+    window.open("thanks.html","_self")
 }
 function setMax(){
     const input = document.querySelector("input");

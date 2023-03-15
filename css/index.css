@@ -85,6 +85,10 @@ body {
     min-height: 100vh;
     position: relative;
     font-family: "Helvetica Neue", sans-serif;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -135,7 +139,7 @@ input[type="number"] {
     flex-direction: row;
     align-items: flex-end;
     padding: 0px;
-    gap: 5px;
+    gap: 10px;
 
 
 }
@@ -148,13 +152,14 @@ input[type="number"] {
     font-style: normal;
     padding-left: 40px;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 20px;
     line-height: 18px;
     display: flex;
     flex-direction: row;
     align-items: flex-end;
     gap: 10px;
     color: #919191;
+    margin-top: 10px;
 }
 
 button {
@@ -166,7 +171,6 @@ button {
     font-size: 16px;
     cursor: pointer;
     width: 100%;
-    margin-left: 10px;
     height: 40px;
 }
 
@@ -179,11 +183,12 @@ button:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0px;
+    padding: 0px 40px 0px 40px;
     width: 100%;
     gap:10px;
     position: absolute;
-    bottom: 0; left: 0;
+    bottom: 20px; left: 0;
+
 }
 .wallet{
     display: flex;
@@ -200,7 +205,7 @@ button:hover {
 .textBalance{
     font-style: normal;
 font-weight: 400;
-font-size: 14px;
+font-size: 16px;
 line-height: 18px;
 
 color: #919191;
