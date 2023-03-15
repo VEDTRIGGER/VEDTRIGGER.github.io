@@ -32,7 +32,8 @@ function closeTelegramWebApp() {
 }
 
 function redirectToThanks() {
-    window.open("thanks.html","_self")
+    Telegram.WebApp.openTelegramLink("https://vedtrigger.github.io/thanks.html")
+   // window.open("thanks.html","_self")
 }
 function setMax(){
     const input = document.querySelector("input");
