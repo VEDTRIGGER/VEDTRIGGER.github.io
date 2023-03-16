@@ -52,8 +52,8 @@ body {
     align-items: center;
     width: 100%;
     gap:10px;
-	position: fixed;
-    bottom: 20px; 
+	position: sticky;
+    bottom: 12px; 
     left: 0;
 }
 
@@ -166,7 +166,6 @@ input[type="text"] {
 }
 
 button {
-    
     background-color: #63abef;
     color: #fff;
     border: none;
@@ -249,10 +248,10 @@ button:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    color: #63abef;
+    color: #212529;
     background-color: #fff;
     height: 100vh;
+    padding-top: 64px;
     font-family: "Helvetica Neue", sans-serif;
   }
 
@@ -262,19 +261,10 @@ button:hover {
     margin: 0 auto;
     height: auto;
     width: 160px;
-    margin-top: 50px;
   }
   @supports ((position:sticky) or (position:-webkit-sticky)){
     .footer {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        gap:10px;
-        position: -webkit-sticky;
-        position: sticky;
-        bottom: 20px; left: 0;
-    
+        /* /* position: -webkit-sticky; */
+        position: fixed;
     }
   }
