@@ -24,7 +24,7 @@
     </div>
     <div class="body">
         <div class="amount">
-            <input type="number" id="amount" name="amount" placeholder="0.01" step="0.01" inputmode="numeric">
+            <input type="text" id="amount" name="amount" inputmode="numeric" maxlength="7">
             <div class="ton_text">TON</div>
         </div>
         <div class="amountUAH">
@@ -33,10 +33,12 @@
     </div>
     <div class="footer">
         <div class="wallet">
+            <div class="wallet-balance">
             <div class="label"><img id="label" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9h6g99z9CrV5o6vdt3eiPMpRa5E_6isvjHg&usqp=CAU" alt=""></div>
             <div class="totalAmount">
                 <div class="textBalance">Total balance</div>
                 <div class="textBalance">687.6</div>
+            </div>
             </div>
             <button  class="max-btn" type="button" onclick="setMax()">MAX</button>
         </div>
