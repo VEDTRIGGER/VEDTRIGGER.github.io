@@ -264,7 +264,12 @@ button:hover {
   }
   @supports ((position:sticky) or (position:-webkit-sticky)){
     .footer {
-        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        gap: 10px;
         position: -webkit-sticky;
         position: sticky;
         bottom: 16px; 
