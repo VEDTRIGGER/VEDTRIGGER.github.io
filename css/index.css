@@ -89,7 +89,6 @@ body {
     align-items: center;
     gap:76px;*/
     height: 100vh;
-    min-height: 100vh;
     position: relative;
     font-family: "San Francisco";/*"Helvetica Neue", sans-serif;*/
     padding-bottom: 20px;
@@ -153,7 +152,7 @@ input[type="text"] {
 }
 
 .body {
-    padding: 40px 0px 100px 0px;
+    padding: 40px 0px 80px 0px;
 }
 
 .amountUAH {
