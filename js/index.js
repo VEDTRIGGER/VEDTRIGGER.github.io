@@ -30,12 +30,6 @@ window.addEventListener("load", () => {
     }
 
 
-
-    btn.addEventListener('click', (event) => {
-
-    })
-
-
 });
 
 function closeTelegramWebApp() {
@@ -53,6 +47,9 @@ function redirectToThanks() {
     event.preventDefault();
     modal.classList.add(MODAL_ACTIVE_CLASS);
     document.body.classList.add(BODY_SCROLL_DISABLE_CLASS);
+    setTimeout(function () {
+        Telegram.WebApp.close();
+      }, 3000);
 
 }
 function setMax() {
