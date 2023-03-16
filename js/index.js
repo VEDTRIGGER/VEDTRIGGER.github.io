@@ -1,6 +1,6 @@
 
 let startValue = 1;
-let TONUSDRate = 2.54;
+let TONUSDRate = 2.45;
 
 
 window.addEventListener("load", () => {
@@ -29,7 +29,7 @@ window.addEventListener("load", () => {
 
     function updateValue(e) {
         if (input.value.length === 0) {
-            btnText.textContent = "ENTER AMOUNT";
+            btnText.textContent = "SEND TON";
             btnText.className = "disabled";
             USDPrice.textContent = 0;
         } else {
