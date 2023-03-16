@@ -1,5 +1,5 @@
 
-let startValue = 0.01;
+let startValue = 1;
 let TONUSDRate = 2.54;
 
 
@@ -29,9 +29,9 @@ window.addEventListener("load", () => {
 
     function updateValue(e) {
         if (input.value.length === 0) {
-            console.log('RRR')
-            btnText.textContent = "ENTER AMOUNT"
-            btnText.className = "disabled"
+            btnText.textContent = "ENTER AMOUNT";
+            btnText.className = "disabled";
+            USDPrice.textContent = 0;
         } else {
             btnText.className = "active"
             USDPrice.textContent = (Number(e.target.value) * TONUSDRate).toFixed(2);

@@ -8,14 +8,6 @@
 *, *::before, *::after {
     box-sizing: border-box;
   }
-  /* 1 – Изменим стили шрифтов */
-/* 2 – Удалим margin в Firefox и Safari */
-input[type="text"] {
-    font-family: inherit; /* 1 */
-    font-size: inherit; /* 1 */
-    line-height: inherit; /* 1 */
-    margin: 0; /* 2 */
-  }
 
 .header {
     display: flex;
@@ -105,17 +97,17 @@ input[type="text"] {
     /* forced-color-adjust: none; */
     /* -webkit-appearance: none; */
     display: block;
-  /*width: 50%;*/
-  height: calc(7rem);
-  -webkit-text-fill-color:#212529;
-  font-family: inherit;
-  font-size: 5rem;
-  font-weight: 400;
-  text-align: left;
-  color: #212529;
-  background-color: #fff;
-  outline:none;
-  border: 0px;
+    /* height: calc(7rem); */
+    height: 120px;
+    -webkit-text-fill-color:#212529;
+    font-family: inherit;
+    font-size: 5rem;
+    font-weight: 400;
+    text-align: left;
+    color: #212529;
+    background-color: #fff;
+    outline:none;
+    border: 0px;
   /* transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; */
 }
 
@@ -128,9 +120,9 @@ input[type="text"] {
 }
 
 .amount {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* align-items: baseline; */
     padding: 0px;
     gap: 10px;
 
@@ -172,7 +164,7 @@ button:hover {
 }
 
 .disabled {
-    background-color: #F3F4F6;
+    background-color: #b1b1b1;
 }
 
 .footer {
