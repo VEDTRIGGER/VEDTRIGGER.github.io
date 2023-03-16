@@ -114,20 +114,9 @@ input[type="text"] {
   text-align: left;
   color: #212529;
   background-color: #fff;
-  /* background-clip: padding-box; */
   outline:none;
   border: 0px;
   /* transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; */
-   /* -moz-appearance: textfield;
-    border-radius: 20px;
-    border: 0px solid #ccc;
-    width: 30%;
-    font-family: 'Jua';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 48px;
-    line-height: 60px;
-    text-align: right;*/
 }
 
 .ton_text {
@@ -152,7 +141,7 @@ input[type="text"] {
     padding: 40px 0px 80px 0px;
 }
 
-.amountUAH {
+.amountUSD {
     font-style: normal;
     padding-left: 8px;
     font-weight: 400;
@@ -180,6 +169,10 @@ button {
 
 button:hover {
     background-color: #546285;
+}
+
+.disabled {
+    background-color: #F3F4F6;
 }
 
 .footer {

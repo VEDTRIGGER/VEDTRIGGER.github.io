@@ -1,35 +1,45 @@
 
+let startValue = 0.01;
+let TONUSDRate = 2.54;
+
+
 window.addEventListener("load", () => {
     const urlParams = new URLSearchParams(window.location.search);
     const skill = urlParams.get("skill");
     const name = urlParams.get("name");
     const link = decodeURI(urlParams.get("link"));
 
-    const text_name = document.getElementById("name");
-    text_name.textContent = name;
-    const text_trait = document.getElementById("trait");
-    text_trait.textContent = skill;
-    const link_img = document.getElementById("photo");
-    link_img.src = link;
-
-
+    const textName = document.getElementById("name");
+    const textTrait = document.getElementById("trait");
+    const linkImg = document.getElementById("photo");
     const input = document.querySelector("input");
-    const log = document.getElementById("calcUah");
-    log.textContent = (0.01 * 80.6).toFixed(2);
+    const USDPrice = document.getElementById("calcUSD");
     const btnText = document.getElementById("confirm");
-    btnText.textContent = "Send 0.01 toncoin";
+
+    textTrait.textContent = skill;
+    textName.textContent = name;
+    linkImg.src = link;
+
+    USDPrice.textContent = (startValue * TONUSDRate).toFixed(2);
+    btnText.textContent = "SEND 1 TON";
     //input.value = 0.01.toFixed(2);
-    input.setAttribute('size', input.value.length <= 1 ? 1 : input.value.length);
+    input.setAttribute('size', input.value.replace('.', '').length <= 1 ? 1 : input.value.replace('.', '').length);
     input.addEventListener("input", updateValue);
+    
 
     function updateValue(e) {
-    
-        log.textContent = (Number(e.target.value) * 80.6).toFixed(2);
-        btnText.textContent = `Send ${e.target.value} toncoin`;
-        e.target.setAttribute('size', e.target.value.length <= 1 ? 1 : e.target.value.length);
+        if (input.value.length === 0) {
+            console.log('RRR')
+            btnText.textContent = "ENTER AMOUNT"
+            btnText.className = "disabled"
+        } else {
+            btnText.className = "active"
+            USDPrice.textContent = (Number(e.target.value) * TONUSDRate).toFixed(2);
+            btnText.textContent = `SEND ${e.target.value} TON`;
+            e.target.setAttribute('size', e.target.value.replace('.', '').length <= 1 ? 1 : e.target.value.replace('.', '').length);
+        }
+        
     }
-
-
 });
 
 function closeTelegramWebApp() {
@@ -42,7 +52,6 @@ function redirectToThanks() {
     // window.open("thanks.html","_self")
     const modal = document.getElementById("modal-done");
     const MODAL_ACTIVE_CLASS = 'modal-active';
-
     const BODY_SCROLL_DISABLE_CLASS = 'body-scroll-disable';
     event.preventDefault();
     modal.classList.add(MODAL_ACTIVE_CLASS);
@@ -54,10 +63,12 @@ function redirectToThanks() {
 }
 function setMax() {
     const input = document.querySelector("input");
-    input.value = 687.6
-    const log = document.getElementById("calcUah");
-    log.textContent = (687.6 * 80.6).toFixed(2);
+    const log = document.getElementById("calcUSD");
     const btnText = document.getElementById("confirm");
-    btnText.textContent = `Send 687.6 toncoin`;
+    log.textContent = (input.value * TONUSDRate).toFixed(2);
+    input.value = 687.6
+    btnText.textContent = `SEND ${input.value} TON`;
+    btnText.className = "active"
+    input.setAttribute('size', input.value.replace('.', '').length <= 1 ? 1 : input.value.replace('.', '').length);
 }
 
