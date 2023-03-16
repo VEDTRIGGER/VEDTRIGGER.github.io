@@ -35,13 +35,13 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 20px 40px;
+    padding: 16px;
     gap: 40px;
     width: 100%;
 }
 
 .body {
-    padding: 16px 16px 32px;
+    padding: 0px 16px 32px;
 }
 
 
@@ -118,11 +118,11 @@ input[type="text"] {
     -webkit-appearance: none;
     display: block;
     /* height: calc(7rem); */
-    height: 120px;
-    width: 100%;
     -webkit-text-fill-color:#212529;
     font-family: inherit;
     font-size: 5rem;
+    width: 100%;
+    padding: 0;
     font-weight: 400;
     text-align: left;
     color: #212529;
