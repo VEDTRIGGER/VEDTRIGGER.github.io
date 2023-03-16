@@ -41,7 +41,7 @@ body {
 }
 
 .body {
-    padding: 40px;
+    padding: 16px 16px 32px;
 }
 
 
@@ -211,6 +211,11 @@ button:hover {
     font-size: 16px;
     line-height: 18px;
     color: #919191;
+}
+.balanceValue {
+    color: #212529;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 #label{

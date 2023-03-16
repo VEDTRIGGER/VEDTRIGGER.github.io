@@ -28,7 +28,7 @@ window.addEventListener("load", () => {
     
 
     function updateValue(e) {
-        if (input.value.length === 0) {
+        if (input.value.length === 0 || input.value == 0) {
             btnText.textContent = "SEND TON";
             btnText.className = "disabled";
             USDPrice.textContent = 0;
