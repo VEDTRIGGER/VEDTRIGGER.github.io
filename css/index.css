@@ -98,6 +98,7 @@ input[type="text"] {
     display: block;
     /* height: calc(7rem); */
     height: 120px;
+    width: 100%;
     -webkit-text-fill-color:#212529;
     font-family: inherit;
     font-size: 5rem;
