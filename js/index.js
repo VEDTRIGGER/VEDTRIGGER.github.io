@@ -21,11 +21,11 @@ window.addEventListener("load", () => {
     
     input.addEventListener("input", updateValue);
     input.value = 0.01.toFixed(2);
-    input.setAttribute('size', input.value.length<=1?1:input.value.length-1);
+    input.setAttribute('size', input.value.length<=1?1:input.value.length);
     function updateValue(e) {
         log.textContent = (Number(e.target.value)*80.6).toFixed(2);
         btnText.textContent = `Send ${e.target.value} toncoin`;
-        e.target.setAttribute('size', e.target.value.length<=1?1:e.target.value.length-1);
+        e.target.setAttribute('size', e.target.value.length<=1?1:e.target.value.length);
     }
 
    
