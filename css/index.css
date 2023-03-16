@@ -53,7 +53,7 @@ body {
     width: 100%;
     gap:10px;
 	position: sticky;
-    bottom: 12px; 
+    bottom: 16px; 
     left: 0;
 }
 
@@ -264,7 +264,10 @@ button:hover {
   }
   @supports ((position:sticky) or (position:-webkit-sticky)){
     .footer {
-        /* /* position: -webkit-sticky; */
-        position: fixed;
+        
+        position: -webkit-sticky;
+        position: sticky;
+        bottom: 16px; 
+        left: 0;
     }
   }
