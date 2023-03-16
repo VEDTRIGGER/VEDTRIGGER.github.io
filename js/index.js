@@ -23,6 +23,9 @@ window.addEventListener("load", () => {
     input.value = 0.01.toFixed(2);
     input.setAttribute('size', input.value.length<=1?1:input.value.length);
     function updateValue(e) {
+        const value = e.target.value.split(".")
+        if(Number(value[0]))
+        
         log.textContent = (Number(e.target.value)*80.6).toFixed(2);
         btnText.textContent = `Send ${e.target.value} toncoin`;
         e.target.setAttribute('size', e.target.value.length<=1?1:e.target.value.length);

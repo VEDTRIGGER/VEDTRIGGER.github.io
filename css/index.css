@@ -107,7 +107,7 @@ input[type="text"] {
     display: block;
   /*width: 50%;*/
   height: calc(7rem);
-
+  -webkit-text-fill-color:#212529;
   font-family: inherit;
   font-size: 5rem;
   font-weight: 400;
