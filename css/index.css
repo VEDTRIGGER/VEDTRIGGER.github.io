@@ -51,9 +51,9 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    gap:10px;
-	position: fixed;
-    bottom: 20px; 
+    gap: 10px;
+	position: -webkit-sticky;
+    bottom: 16px; 
     left: 0;
 }
 
@@ -200,7 +200,7 @@ button:hover {
     align-items: center;
     gap: 16px;
 }
-.max-btn{
+.max-btn {
     width:20%;
 }
 
