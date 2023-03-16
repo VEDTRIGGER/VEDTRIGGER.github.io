@@ -11,30 +11,29 @@ window.addEventListener("load", () => {
     text_trait.textContent = skill;
     const link_img = document.getElementById("photo");
     link_img.src = link;
-    
-    
+
+
     const input = document.querySelector("input");
     const log = document.getElementById("calcUah");
-    log.textContent = (0.01*80.6).toFixed(2);
+    log.textContent = (0.01 * 80.6).toFixed(2);
     const btnText = document.getElementById("confirm");
     btnText.textContent = "Send 0.01 toncoin";
     //input.value = 0.01.toFixed(2);
-    input.setAttribute('size', input.value.length<=1?1:input.value.length);
+    input.setAttribute('size', input.value.length <= 1 ? 1 : input.value.length);
     input.addEventListener("input", updateValue);
-    
+
     function updateValue(e) {
-        const value = e.target.value.split(".")
-        if(Number(value[0]))
-        log.textContent = (Number(e.target.value)*80.6).toFixed(2);
+    
+        log.textContent = (Number(e.target.value) * 80.6).toFixed(2);
         btnText.textContent = `Send ${e.target.value} toncoin`;
-        e.target.setAttribute('size', e.target.value.length<=1?1:e.target.value.length);
+        e.target.setAttribute('size', e.target.value.length <= 1 ? 1 : e.target.value.length);
     }
 
-   
-   
-            btn.addEventListener('click', (event) => {
-                
-            })
+
+
+    btn.addEventListener('click', (event) => {
+
+    })
 
 
 });
@@ -46,21 +45,21 @@ function closeTelegramWebApp() {
 
 function redirectToThanks() {
     //window.location.href="https://vedtrigger.github.io/thanks.html"
-   // window.open("thanks.html","_self")
-   const modal = document.getElementById("modal-done");
-   const MODAL_ACTIVE_CLASS = 'modal-active';
+    // window.open("thanks.html","_self")
+    const modal = document.getElementById("modal-done");
+    const MODAL_ACTIVE_CLASS = 'modal-active';
 
-   const BODY_SCROLL_DISABLE_CLASS = 'body-scroll-disable';
-   event.preventDefault();
+    const BODY_SCROLL_DISABLE_CLASS = 'body-scroll-disable';
+    event.preventDefault();
     modal.classList.add(MODAL_ACTIVE_CLASS);
     document.body.classList.add(BODY_SCROLL_DISABLE_CLASS);
 
 }
-function setMax(){
+function setMax() {
     const input = document.querySelector("input");
     input.value = 687.6
     const log = document.getElementById("calcUah");
-    log.textContent = (687.6*80.6).toFixed(2);
+    log.textContent = (687.6 * 80.6).toFixed(2);
     const btnText = document.getElementById("confirm");
     btnText.textContent = `Send 687.6 toncoin`;
 }
