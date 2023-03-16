@@ -94,8 +94,7 @@ input[type="text"]::-webkit-outer-spin-button {
 }
 
 input[type="text"] {
-    /* forced-color-adjust: none; */
-    /* -webkit-appearance: none; */
+    -webkit-appearance: none;
     display: block;
     /* height: calc(7rem); */
     height: 120px;
@@ -108,7 +107,7 @@ input[type="text"] {
     background-color: #fff;
     outline:none;
     border: 0px;
-  /* transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; */
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .ton_text {
@@ -123,14 +122,10 @@ input[type="text"] {
     /* display: flex; */
     /* flex-direction: row; */
     /* align-items: baseline; */
-    padding: 0px;
-    gap: 10px;
-
-
 }
 
 .body {
-    padding: 20px 20px 60px 20px;
+    padding: 20px 0px 60px 0px;
 }
 
 .amountUSD {

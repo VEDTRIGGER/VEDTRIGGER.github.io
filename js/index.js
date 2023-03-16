@@ -23,7 +23,7 @@ window.addEventListener("load", () => {
     USDPrice.textContent = (startValue * TONUSDRate).toFixed(2);
     btnText.textContent = "SEND 1 TON";
     //input.value = 0.01.toFixed(2);
-    input.setAttribute('size', input.value.replace('.', '').length <= 1 ? 1 : input.value.replace('.', '').length);
+    // input.setAttribute('size', input.value.replace('.', '').length <= 1 ? 1 : input.value.replace('.', '').length);
     input.addEventListener("input", updateValue);
     
 
@@ -36,7 +36,7 @@ window.addEventListener("load", () => {
             btnText.className = "active"
             USDPrice.textContent = (Number(e.target.value) * TONUSDRate).toFixed(2);
             btnText.textContent = `SEND ${e.target.value} TON`;
-            e.target.setAttribute('size', e.target.value.replace('.', '').length <= 1 ? 1 : e.target.value.replace('.', '').length);
+            // e.target.setAttribute('size', e.target.value.replace('.', '').length <= 1 ? 1 : e.target.value.replace('.', '').length);
         }
         
     }
@@ -69,6 +69,6 @@ function setMax() {
     input.value = 687.6
     btnText.textContent = `SEND ${input.value} TON`;
     btnText.className = "active"
-    input.setAttribute('size', input.value.replace('.', '').length <= 1 ? 1 : input.value.replace('.', '').length);
+    // input.setAttribute('size', input.value.replace('.', '').length <= 1 ? 1 : input.value.replace('.', '').length);
 }
 
