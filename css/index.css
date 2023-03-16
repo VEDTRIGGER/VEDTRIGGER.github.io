@@ -193,7 +193,7 @@ button:hover {
    /* padding: 0px 40px 0px 40px;*/
     width: 100%;
     gap:10px;
-    position: absolute;
+    position: fixed;
     bottom: 20px; left: 0;
 
 }
