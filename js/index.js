@@ -18,7 +18,7 @@ window.addEventListener("load", () => {
     log.textContent = (0.01*80.6).toFixed(2);
     const btnText = document.getElementById("confirm");
     btnText.textContent = "Send 0.01 toncoin";
-    input.value = 0.01.toFixed(2);
+    //input.value = 0.01.toFixed(2);
     input.setAttribute('size', input.value.length<=1?1:input.value.length);
     input.addEventListener("input", updateValue);
     
