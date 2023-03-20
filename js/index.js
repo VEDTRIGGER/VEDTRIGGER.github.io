@@ -1,13 +1,17 @@
 
 let startValue = 1;
 let TONUSDRate = 2.45;
-
+let user_id;
+let girl_id;
+let skill;
 
 window.addEventListener("load", () => {
     const urlParams = new URLSearchParams(window.location.search);
-    const skill = urlParams.get("skill");
+    skill = urlParams.get("skill");
     const name = urlParams.get("name");
     const link = decodeURI(urlParams.get("link"));
+    user_id = urlParams.get("user_id");
+    girl_id= urlParams.get("id");
 
     const textName = document.getElementById("name");
     const textTrait = document.getElementById("trait");
@@ -15,6 +19,12 @@ window.addEventListener("load", () => {
     const input = document.querySelector("input");
     const USDPrice = document.getElementById("calcUSD");
     const btnText = document.getElementById("confirm");
+
+    console.log({
+        "user_id": user_id,
+        "amount": input.value,
+        "girl_id": girl_id
+    });
 
     textTrait.textContent = skill;
     textName.textContent = name;
@@ -25,7 +35,7 @@ window.addEventListener("load", () => {
     //input.value = 0.01.toFixed(2);
     // input.setAttribute('size', input.value.replace('.', '').length <= 1 ? 1 : input.value.replace('.', '').length);
     input.addEventListener("input", updateValue);
-    
+
 
     function updateValue(e) {
         if (input.value.length === 0 || input.value == 0) {
@@ -38,7 +48,7 @@ window.addEventListener("load", () => {
             btnText.textContent = `SEND ${e.target.value} TON`;
             // e.target.setAttribute('size', e.target.value.replace('.', '').length <= 1 ? 1 : e.target.value.replace('.', '').length);
         }
-        
+
     }
 });
 
@@ -50,6 +60,45 @@ function closeTelegramWebApp() {
 function redirectToThanks() {
     //window.location.href="https://vedtrigger.github.io/thanks.html"
     // window.open("thanks.html","_self")
+    const input = document.querySelector("input");
+    let type;
+    switch(skill){
+        case "Mind": 
+            type = "intellect";
+        break;
+        case "Energy": 
+            type = "energy";
+        break;
+        case "Body": 
+            type = "beauty";
+        break;
+    }
+
+
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", "Basic dGVzdDp0ZXN0");
+    myHeaders.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify({
+        "user_id": user_id,
+        "amount": input.value,
+        "type": type,
+        "girl_id": girl_id
+    });
+
+    var requestOptions = {
+        method: 'PUT',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+    };
+
+    fetch("https://tag.trigger.services/api/ton/give-ton", requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
+
+
     const modal = document.getElementById("modal-done");
     const MODAL_ACTIVE_CLASS = 'modal-active';
     const BODY_SCROLL_DISABLE_CLASS = 'body-scroll-disable';
@@ -58,7 +107,7 @@ function redirectToThanks() {
     document.body.classList.add(BODY_SCROLL_DISABLE_CLASS);
     setTimeout(function () {
         Telegram.WebApp.close();
-      }, 3000);
+    }, 3000);
 
 }
 function setMax() {
