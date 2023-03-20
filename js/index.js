@@ -11,7 +11,7 @@ window.addEventListener("load", () => {
     const name = urlParams.get("name");
     const link = decodeURI(urlParams.get("link"));
     user_id = urlParams.get("user_id");
-    girl_id= urlParams.get("id");
+    girl_id = urlParams.get("id");
 
     const textName = document.getElementById("name");
     const textTrait = document.getElementById("trait");
@@ -60,45 +60,46 @@ function closeTelegramWebApp() {
 function redirectToThanks() {
     //window.location.href="https://vedtrigger.github.io/thanks.html"
     // window.open("thanks.html","_self")
-    const input = document.querySelector("input");
-    let type;
-    switch(skill){
-        case "Mind": 
-            type = "intellect";
-        break;
-        case "Energy": 
-            type = "energy";
-        break;
-        case "Body": 
-            type = "beauty";
-        break;
+    if (user_id !== "" && girl_id !== "") {
+        const input = document.querySelector("input");
+        let type;
+        switch (skill) {
+            case "Mind":
+                type = "intellect";
+                break;
+            case "Energy":
+                type = "energy";
+                break;
+            case "Body":
+                type = "beauty";
+                break;
+        }
+
+
+        var myHeaders = new Headers();
+        myHeaders.append("Authorization", "Basic dGVzdDp0ZXN0");
+        myHeaders.append("Content-Type", "application/json");
+
+        var raw = JSON.stringify({
+            "user_id": user_id,
+            "amount": input.value,
+            "type": type,
+            "girl_id": girl_id
+        });
+
+        var requestOptions = {
+            method: 'PUT',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+        };
+
+        fetch("https://tag.trigger.services/api/ton/give-ton", requestOptions)
+            .then(response => response.text())
+            .then(result => console.log(result))
+            .catch(error => console.log('error', error));
+
     }
-
-
-    var myHeaders = new Headers();
-    myHeaders.append("Authorization", "Basic dGVzdDp0ZXN0");
-    myHeaders.append("Content-Type", "application/json");
-
-    var raw = JSON.stringify({
-        "user_id": user_id,
-        "amount": input.value,
-        "type": type,
-        "girl_id": girl_id
-    });
-
-    var requestOptions = {
-        method: 'PUT',
-        headers: myHeaders,
-        body: raw,
-        redirect: 'follow'
-    };
-
-    fetch("https://tag.trigger.services/api/ton/give-ton", requestOptions)
-        .then(response => response.text())
-        .then(result => console.log(result))
-        .catch(error => console.log('error', error));
-
-
     const modal = document.getElementById("modal-done");
     const MODAL_ACTIVE_CLASS = 'modal-active';
     const BODY_SCROLL_DISABLE_CLASS = 'body-scroll-disable';
