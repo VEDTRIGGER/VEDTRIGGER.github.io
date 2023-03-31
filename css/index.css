@@ -135,7 +135,7 @@ input[type="text"] {
 .ton_text {
     font-style: normal;
     font-weight: 400;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 25px;
     color: #919191;
 }
@@ -270,10 +270,11 @@ button:hover {
         justify-content: center;
         align-items: center;
         width: 100%;
-        gap:10px;
+        gap: 10px;
         position: -webkit-sticky;
         position: sticky;
-        bottom: 20px; left: 0;
+        bottom: 10px; 
+        left: 0;
     
     }
   }
