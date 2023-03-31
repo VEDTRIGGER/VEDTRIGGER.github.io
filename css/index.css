@@ -120,7 +120,7 @@ input[type="text"] {
     /* height: calc(7rem); */
     -webkit-text-fill-color:#212529;
     font-family: inherit;
-    font-size: 5rem;
+    font-size: 4rem;
     width: 100%;
     padding: 0;
     font-weight: 400;
@@ -135,7 +135,7 @@ input[type="text"] {
 .ton_text {
     font-style: normal;
     font-weight: 400;
-    font-size: 30px;
+    font-size: 24px;
     line-height: 25px;
     color: #919191;
 }
