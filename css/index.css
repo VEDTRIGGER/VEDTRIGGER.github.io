@@ -63,7 +63,7 @@ body {
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
-    line-height: 15px;
+    line-height: 32px;
     /* identical to box height */
 
 
@@ -71,14 +71,14 @@ body {
 
     /* Auto layout */
 
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
+    display: block;
+    /* flex-direction: row;
+    align-items: flex-start; */
     padding: 0px;
     gap: 5px;
 
-    width: 128px;
-    height: 15px;
+    /* width: 128px; */
+    /* height: 15px; */
 
 
     /* Inside auto layout */

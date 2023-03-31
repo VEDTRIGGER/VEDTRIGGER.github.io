@@ -108,7 +108,7 @@ function redirectToThanks() {
     document.body.classList.add(BODY_SCROLL_DISABLE_CLASS);
     setTimeout(function () {
         Telegram.WebApp.close();
-    }, 3000);
+    }, 2000);
 
 }
 function setMax() {
