@@ -18,6 +18,7 @@ window.addEventListener("load", () => {
     const linkImg = document.getElementById("photo");
     const input = document.querySelector("input");
     const USDPrice = document.getElementById("calcUSD");
+    const votes = document.getElementById("votes");
     const btnText = document.getElementById("confirm");
 
     console.log({
@@ -31,6 +32,7 @@ window.addEventListener("load", () => {
     linkImg.src = link;
 
     USDPrice.textContent = (startValue * TONUSDRate).toFixed(2);
+    votes.textContent = Math.round(Math.sqrt(startValue));
     btnText.textContent = "SEND 1 TON";
     //input.value = 0.01.toFixed(2);
     // input.setAttribute('size', input.value.replace('.', '').length <= 1 ? 1 : input.value.replace('.', '').length);
@@ -42,9 +44,11 @@ window.addEventListener("load", () => {
             btnText.textContent = "SEND TON";
             btnText.className = "disabled";
             USDPrice.textContent = 0;
+            votes.textContent = 0;
         } else {
             btnText.className = "active"
             USDPrice.textContent = (Number(e.target.value) * TONUSDRate).toFixed(2);
+            votes.textContent = Math.round(Math.sqrt(Number(e.target.value)));
             btnText.textContent = `SEND ${e.target.value} TON`;
             // e.target.setAttribute('size', e.target.value.replace('.', '').length <= 1 ? 1 : e.target.value.replace('.', '').length);
         }
@@ -113,12 +117,14 @@ function redirectToThanks() {
 }
 function setMax() {
     const input = document.querySelector("input");
-    const log = document.getElementById("calcUSD");
+    const USD = document.getElementById("calcUSD");
+    const votes = document.getElementById("votes");
     const btnText = document.getElementById("confirm");
-    log.textContent = (input.value * TONUSDRate).toFixed(2);
-    input.value = 687.6
+    USD.textContent = (input.value * TONUSDRate).toFixed(2);
+    votes.textContent = Math.round(Math.sqrt(Number(input.value)));
+    input.value = 687.6;
     btnText.textContent = `SEND ${input.value} TON`;
-    btnText.className = "active"
+    btnText.className = "active";
     // input.setAttribute('size', input.value.replace('.', '').length <= 1 ? 1 : input.value.replace('.', '').length);
 }
 
